@@ -1,13 +1,13 @@
+import * as React from "react";
 import {Form, Searcher, Button} from './style';
 
-function SearchBar () {
+function SearchBar ({pokemonFilter}) {
   
 
   return (
     
-      <Form>
-        <Searcher type={"text"} name="busca" defaultValue={"Procurar Pokemon"} />
-        <Button >Buscar</Button>
+      <Form onChange={(e) => pokemonFilter(e.target.value)} >
+        <Searcher  placeholder='Buscar Pokemon' />        
       </Form>   
     
     

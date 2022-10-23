@@ -6,9 +6,6 @@ flex-direction: column;
 height: 25rem;
 width: 10rem;
 
-box-shadow: 1em yellow;
-overflow-y:scroll;
-scroll-behavior: smooth;
 `
 
 

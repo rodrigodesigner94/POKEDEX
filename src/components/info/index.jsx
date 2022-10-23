@@ -1,3 +1,4 @@
+import * as React from "react";
 import {Container, P} from './style';
 
 function Info () {

@@ -1,18 +1,12 @@
-import { Listing, Li } from "./style"
-
-
-
-
+import * as React from "react";
+import { Li } from "./style"
 
 function List({name}) {
-  
-    
-    return (
       
-      <Li >        
+    return (      
+      <Li>        
           {name}                    
-      </Li>
-     
+      </Li>      
     )
   }
   
