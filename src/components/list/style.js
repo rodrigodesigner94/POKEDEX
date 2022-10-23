@@ -12,9 +12,10 @@ scroll-behavior: smooth;
 `
 
 
-export const Li = styled.li`
+export const Li = styled.div`
 font-family: 'Roboto Mono', monospace;
 color: yellow;
 text-shadow:0.5px 0.5px 0px black ;
 opacity: none;
+
 `

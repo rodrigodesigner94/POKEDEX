@@ -29,8 +29,11 @@ display: flex;
 export const LeftBar = styled.div`
     display: flex;
     flex-direction: column;
-    
-    
+    overflow-y:scroll;
+    height: 25rem;
+    width: 12rem;
+    scroll-behavior: smooth;
+    margin-right:1em ;
     
 `
 export const CentArea = styled.div`
@@ -38,6 +41,8 @@ export const CentArea = styled.div`
     flex-direction: column;
     align-items: center;
     margin-top: 5rem;
+    padding-left: 12em;
+    padding-right: 12em;
 `
 export const Arena = styled.div`
     display: flex;
