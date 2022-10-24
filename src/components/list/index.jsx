@@ -1,12 +1,14 @@
 import * as React from "react";
-import { Li } from "./style"
+import { Listing, Li } from "./style"
 
 function List({name}) {
       
-    return (      
-      <Li>        
-          {name}                    
-      </Li>      
+    return (
+      <Listing>      
+        <Li>        
+            {name}                    
+        </Li>    
+      </Listing>  
     )
   }
   

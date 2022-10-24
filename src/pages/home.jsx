@@ -1,9 +1,8 @@
-import Info from '../components/info'
-import Pokemon from '../components/pokemon';
+import PokemonCard from '../components/pokemoncard';
 import SearchBar from '../components/searchBar';
 import List from '../components/list';
 import React, { useEffect, useState } from 'react';
-import { Body, Head, Container, LeftBar, CentArea, Arena, Title } from './globalstyle';
+import { Body, Head, Container, LeftBar, CentArea, ScrollBar} from './globalstyle';
 import axios from 'axios';
 
 
@@ -20,8 +19,9 @@ function Home() {
         endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`);
       }
       axios.all(endpoints.map((endpoint) => axios.get(endpoint))).then((res) => setPokemons(res));
+      
     };
-
+       
     const pokemonFilter = (name) => {
       var filteredPokemons = [];
       if (name === "") {
@@ -33,45 +33,45 @@ function Home() {
         }
       }
   
-      setPokemons(filteredPokemons);
-    
+      setPokemons(filteredPokemons);                
     }
-       
-  return (
+          
+      return (
     <Body>
     
       <Head />
 
-      <Container>
-
-        
-
+      <Container>     
         <LeftBar>
         <SearchBar pokemonFilter={pokemonFilter} />
 
-        {pokemons.map((pokemon, key) => (
-            <List name={pokemon.data.name} key={key} />
-        ))}
+        {/* {pokemons.map((pokemon, key) => (
+            <List 
+              name={pokemon.data.name} 
+              key={key}/>
+        ))} */}
                   
         </LeftBar>
 
-          <CentArea>
-
-            <Title><h1>Pokemon</h1></Title>
-
-            <Arena>
-            <Pokemon />
-            <Info />
-            </Arena>
-
-          </CentArea>
-
-        </Container>
+         <CentArea>         
+         <ScrollBar>
+          {pokemons.map((poke, key) => (
+            <PokemonCard
+              id="pokeCard"
+              name={poke.data.name}
+              image={poke.data.sprites.front_default} 
+              type={poke.data.type} 
+              key={key} />
+            ))}  
+        </ScrollBar> 
+        </CentArea>
+      </ Container>
 
       
     
     </Body>
   )
 }
+
 
 export default Home
