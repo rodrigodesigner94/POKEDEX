@@ -1,10 +1,12 @@
 import Home from "./pages/home";
-import './app.css';
+import { Container } from './AppStyle'
 
 function App() {
     
   return (
+    <Container>
     <Home />
+    </Container>
   )
 }
 
